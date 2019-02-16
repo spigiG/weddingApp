@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menü</title>
+</head>
+<body>
+    <div>
+        <h2>Választható ételek</h2>
+        <form id="food-form">
+            <input type="hidden" id="hidden-id">
+            <div>
+                <input type="text" id="food-type" placeholder="Típus">
+                <input type="text" id="food-name" placeholder="Név">
+                <input type="text" id="food-desc" placeholder="Leírás">
+            
+            
+            </div>
+            <button type="submit" id="submit-button"><i class="fas fa-trash"></i> Létrehozás</button>
+        </form>
+        <div id="message-p"></div>
+        <table>
+            <thead>
+            <tr>
+                <th>Típus</th>
+                <th>Név</th>
+                <th>Leírás</th>
+            </tr>
+            </thead>
+            <tbody id="food-tbody"></tbody>
+        </table>
+    </div>
+    <script src="js/foods.js"></script>
+</body>
+</html>
