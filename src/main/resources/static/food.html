@@ -1,16 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/table.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <title>Menü</title>
 </head>
 <body>
     <div>
-        <h2>Választható ételek2</h2>
-        <form id="food-form">
+        <h2>Választható ételek</h2>
+        <form id="food-form" class="foodform">
             <input type="hidden" id="hidden-id">
             <div>
                 <input type="text" id="food-type" placeholder="Típus">
@@ -22,16 +24,18 @@
             <button type="submit" id="submit-button"><i class="fas fa-trash"></i> Létrehozás</button>
         </form>
         <div id="message-p"></div>
-        <table>
-            <thead>
-            <tr>
-                <th>Típus</th>
-                <th>Név</th>
-                <th>Leírás</th>
-            </tr>
-            </thead>
-            <tbody id="food-tbody"></tbody>
-        </table>
+        <div class="table-div">
+            <table class="table table-hover full-table">
+                <thead class="table-head">
+                <tr>
+                    <th class="table-titles rows">Típus</th>
+                    <th class="table-titles rows">Név</th>
+                    <th class="table-titles rows">Leírás</th>
+                </tr>
+                </thead>
+                <tbody id="food-tbody" class="table-body"></tbody>
+            </table>
+        </div>
     </div>
     <script src="js/foods.js"></script>
 </body>

@@ -1,0 +1,39 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+h2 {
+    display: flex;
+    justify-content: center;
+    color: #adad85;
+}
+.foodform {
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+}
+.table {
+    background-color: transparent;
+    margin-left: 100px;
+    margin-bottom: -165px;
+    width: 80%;
+}
+.table-titles {
+    background: #adad85;
+    color: #E5EFEE;
+    font-style: normal;
+    font-weight: normal;
+    padding: 0.65rem;
+}
+.table-d {
+    border: 0;
+    margin: 0;
+    text-align: center;
+    padding: 0.65rem;
+    vertical-align: center;
+}
+
+.table tr:hover {
+    background: #adad85;
+    color: #E5EFEE;
+    cursor: pointer;
+}

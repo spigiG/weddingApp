@@ -16,9 +16,8 @@ function handleSubmit(event) {
     let foodDesc = descInput.value;
 
     let food = {'foodType': foodType, 'foodName': foodName, 'foodDesc': foodDesc};
-    let url = 'http://localhost:8080/api/foods';
 
-    fetch(url, {
+    fetch('http://localhost:8080/api/foodcreate',{
         method: 'POST',
         mode: 'cors',
         headers: {
@@ -48,6 +47,7 @@ function handleSubmit(event) {
 function updateTable() {
     
     fetch('http://localhost:8080/api/foods',{
+        method: 'GET',
         mode: 'cors',
         headers: {
             'Access-Control-Allow-Origin':'*'
@@ -70,16 +70,20 @@ function fillTable(menuoptions) {
         let menu = menuoptions[i];
         let tr = document.createElement('tr');
         tr['raw-data'] = menu;
+        tr.setAttribute('class', 'table-row rows');
 
         let menuType = document.createElement('td');
+        menuType.setAttribute('class', 'table-d');
         menuType.innerHTML = menu.type.type;
         tr.appendChild(menuType);
 
         let menuTitle = document.createElement('td');
+        menuTitle.setAttribute('class', 'table-d');
         menuTitle.innerHTML = menu.title;
         tr.appendChild(menuTitle);
 
         let menuDesc = document.createElement('td');
+        menuDesc.setAttribute('class', 'table-d');
         menuDesc.innerHTML = menu.description;
         tr.appendChild(menuDesc);
 

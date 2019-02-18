@@ -22,7 +22,7 @@ public class FoodController {
     }
 
     @CrossOrigin
-    @RequestMapping(value = "/api/foods", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/foodcreate", method = RequestMethod.POST)
     public Response createFood(@RequestBody Food food) {
         return foodService.createFood(food.getType().getTypeId(), food.getTitle(), food.getDescription());
     }
