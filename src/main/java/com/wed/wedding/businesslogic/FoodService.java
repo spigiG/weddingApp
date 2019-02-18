@@ -28,14 +28,36 @@ public class FoodService {
         }
     }
 
-    public Response createFood(FoodType type, String title, String description) {
-        List<Food> foods = foodDao.listFoods();
-        for(Food food: foods) {
-            if(food.equals(title)) {
-                return new Response(false, bundle.getString("label.usedFood"));
-            }
+    public Response createFood(int type, String title, String description) {
+        if(type == 0) {
+            return new Response(false, "Rossz paraméter");
         }
-        return new Response(true, bundle.getString("label.newFood"));
+        Response result = checkInputValue(title, description);
+        if(result != null) {
+            return result;
+        }
+
+        foodDao.createFood(type, title, description);
+        return new Response(true, "Az új étel létrehozva");
+    }
+	
+	private Response checkInputValue(String title, String description) {
+        Response result = null;
+        List<Food> foods = listFoods();
+
+        if(isEmpty(title) || isEmpty(description)) {
+            result = new Response(false, "A paraméter nem megfelelő");
+        }
+
+        return result;
+    }
+
+    private boolean isEmpty(String word) {
+        if(word == null || word.length() == 0) {
+            return true;
+        }
+
+        return false;
     }
 
     public List<Food> listFoods() {

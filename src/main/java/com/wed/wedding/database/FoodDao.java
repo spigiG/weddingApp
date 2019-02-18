@@ -22,7 +22,7 @@ public class FoodDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void createFood(FoodType type, String title, String description) {
+    public void createFood(int type, String title, String description) {
         jdbcTemplate.update("insert into menuoptions(type, title, description) values(?, ?, ?)", type, title, description);
     }
 

@@ -8,6 +8,10 @@ public class FoodType {
         this.typeId = typeId;
         this.type = type;
     }
+	
+	public FoodType(int typeId) {
+        this.typeId = typeId;
+    }
 
     public FoodType() {}
 
